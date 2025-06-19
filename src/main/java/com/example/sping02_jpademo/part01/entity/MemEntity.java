@@ -1,4 +1,4 @@
-package com.example.sping02_jpadeomo.part01.entity;
+package com.example.sping02_jpademo.part01.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

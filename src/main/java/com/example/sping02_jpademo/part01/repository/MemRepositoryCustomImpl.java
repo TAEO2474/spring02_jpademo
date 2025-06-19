@@ -1,10 +1,10 @@
-package com.example.sping02_jpadeomo.part01.repository;
+package com.example.sping02_jpademo.part01.repository;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.sping02_jpadeomo.part01.entity.MemEntity;
+import com.example.sping02_jpademo.part01.entity.MemEntity;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

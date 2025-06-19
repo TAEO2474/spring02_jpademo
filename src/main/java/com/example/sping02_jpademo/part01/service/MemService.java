@@ -1,8 +1,8 @@
-package com.example.sping02_jpadeomo.part01.service;
+package com.example.sping02_jpademo.part01.service;
 
 import java.util.List;
 
-import com.example.sping02_jpadeomo.part01.dto.MemDTO;
+import com.example.sping02_jpademo.part01.dto.MemDTO;
 
 public interface MemService {
     public List<MemDTO> getByJPQL(String name); //단순 조회
@@ -14,4 +14,7 @@ public interface MemService {
     public List<MemDTO> getMemByAgeIsNotNull();
     //public int insertMemByNative(String name, int age, String loc);
     public int insertMemByNative(MemDTO memdto);
+    public int updateMem(MemDTO memdto);
+    public int delateMem(int num);
+    
 }

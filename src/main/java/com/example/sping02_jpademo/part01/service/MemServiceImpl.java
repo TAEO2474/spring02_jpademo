@@ -1,14 +1,15 @@
-package com.example.sping02_jpadeomo.part01.service;
+package com.example.sping02_jpademo.part01.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.example.sping02_jpadeomo.part01.dto.MemDTO;
-import com.example.sping02_jpadeomo.part01.entity.MemEntity;
-import com.example.sping02_jpadeomo.part01.repository.MemRepository;
+import com.example.sping02_jpademo.part01.dto.MemDTO;
+import com.example.sping02_jpademo.part01.entity.MemEntity;
+import com.example.sping02_jpademo.part01.repository.MemRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -89,18 +90,35 @@ public class MemServiceImpl implements MemService {
 
 		return listMemDTO;
 	}
-	
+//	@Transactional
 //	@Override
 //	public int insertMemByNative(String name, int age, String loc) {
 //		int cnt = memRepository.insertMemByNative(name, age, loc);
 //		return cnt;
 //	}
 	
+	@Transactional
 	@Override
 	public int insertMemByNative(MemDTO memdto) {
 		int cnt = memRepository.insertMemByNative(memdto);
 		return cnt;
 	}
-
+	
+	@Transactional
+	@Override
+	public int updateMem(MemDTO memDTO) {
+		MemEntity memEntity = memDTO.toEntity();
+		//int cnt = memRepository.updateMemByNative(memEntity);
+		int cnt = memRepository.updateMemByJpql(memEntity);
+		return 0;
+	}
+	
+	@Transactional
+	@Override
+	public int delateMem (int num) {
+		//int cnt = memRepository.deleteMemByNative(num);
+		int cnt = memRepository.deleteMemByJpql(num);
+		return cnt;
+	}
 }
 

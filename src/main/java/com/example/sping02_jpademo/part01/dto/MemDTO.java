@@ -1,6 +1,6 @@
-package com.example.sping02_jpadeomo.part01.dto;
+package com.example.sping02_jpademo.part01.dto;
 
-import com.example.sping02_jpadeomo.part01.entity.MemEntity;
+import com.example.sping02_jpademo.part01.entity.MemEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
